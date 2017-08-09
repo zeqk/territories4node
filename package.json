@@ -1,5 +1,5 @@
 {
-  "name": "todolistapi",
+  "name": "territories4node",
   "version": "1.0.0",
   "description": "",
   "main": "nodemon server.js",
@@ -10,9 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.17.2",
+    "body-parser": "1.17.2",
     "express": "4.15.4",
-    "mongoose": "^4.11.6"
+    "mongoose": "4.11.6"
   },
   "devDependencies": {
     "nodemon": "1.11.0"
