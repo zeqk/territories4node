@@ -1,6 +1,7 @@
 var express = require('express'),
   app = express(),
-  port = process.env.OPENSHIFT_NODEJS_PORT || 3000,
+  port = process.env.OPENSHIFT_NODEJS_PORT || 8080,
+  ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
   // mongoose = require('mongoose')
   // Territory = require('./api/models/territoryModel'),
   bodyParser = require('body-parser');
@@ -13,11 +14,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-var routes = require('./api/routes/territoriesRoutes');
-routes(app);
+// var routes = require('./api/routes/territoriesRoutes');
+// routes(app);
+
+app.get('/', function(req, res) {
+    res.send('Hello from Territories  at '+ new Date());
+});
 
 
-app.listen(port);
+app.listen(port,ip);
 
 
 console.log('todo list RESTful API server started on: ' + port);
+
+module.exports = app;
