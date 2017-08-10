@@ -1,12 +1,12 @@
 var express = require('express'),
   app = express(),
-  port = process.env.PORT || 3000,
-  mongoose = require('mongoose')
-  Territory = require('./api/models/territoryModel'),
+  port = process.env.OPENSHIFT_NODEJS_PORT || 3000,
+  // mongoose = require('mongoose')
+  // Territory = require('./api/models/territoryModel'),
   bodyParser = require('body-parser');
   
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://userdb:ezequiel123@mongodb/TerritoriesDb'); 
+// mongoose.Promise = global.Promise;
+// mongoose.connect('mongodb://userdb:ezequiel123@mongodb/TerritoriesDb'); 
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
