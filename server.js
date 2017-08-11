@@ -7,7 +7,12 @@ var express = require('express'),
   bodyParser = require('body-parser');
   
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://userdb:ezequiel123@mongoterritoriesdb/territoriesdb'); 
+var connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
+  process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
+  process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
+  process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
+  'territoriesdb';
+mongoose.connect('mongodb://' + connection_string); 
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
