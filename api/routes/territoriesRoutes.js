@@ -6,7 +6,7 @@ module.exports = function(app) {
   // todoList Routes
   app.route('/territories')
     .get(controller.test)
-    .post(controller.test);
+    .post(controller.add);
 
 
   app.route('/territories/:territoryId')
